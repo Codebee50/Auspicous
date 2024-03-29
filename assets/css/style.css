@@ -417,7 +417,6 @@ main {
 .what-people-say-section .body-con .comments-container {
   display: flex;
   flex-direction: row;
-  margin-left: 100px;
   gap: 30px;
 }
 .what-people-say-section .body-con .comments-container .comment {
