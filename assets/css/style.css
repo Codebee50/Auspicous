@@ -63,6 +63,30 @@ svg {
   z-index: 1;
 }
 
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-heading .heading p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.section-heading .heading .line {
+  width: 50px;
+  height: 1px;
+  margin: 0 20px;
+  background-color: var(--text-color);
+  opacity: 0.5;
+}
+.section-heading .section-exp {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  margin-top: 5px;
+  text-align: center;
+}
+
 .hero-background-img.left {
   left: 0;
 }
@@ -208,28 +232,6 @@ main {
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-}
-.projects-section .section-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.projects-section .section-heading .heading p {
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-.projects-section .section-heading .heading .line {
-  width: 50px;
-  height: 1px;
-  margin: 0 20px;
-  background-color: var(--text-color);
-  opacity: 0.5;
-}
-.projects-section .section-heading .section-exp {
-  font-size: 0.9rem;
-  opacity: 0.5;
-  margin-top: 5px;
-  text-align: center;
 }
 .projects-section .projects-container {
   margin-top: 40px;
@@ -386,6 +388,80 @@ main {
   line-height: 1.6;
 }
 
+.what-people-say-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  align-items: center;
+}
+.what-people-say-section .body-con {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+.what-people-say-section .body-con .first {
+  min-width: 170px;
+}
+.what-people-say-section .body-con .first .top-txt {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.what-people-say-section .body-con .first .bottom-txt {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 3px;
+  opacity: 0.6;
+}
+.what-people-say-section .body-con .comments-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 100px;
+  gap: 30px;
+}
+.what-people-say-section .body-con .comments-container .comment {
+  width: 300px;
+}
+.what-people-say-section .body-con .comments-container .comment .top img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+}
+.what-people-say-section .body-con .comments-container .comment .top .top-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.what-people-say-section .body-con .comments-container .comment .top .top-right .commentator-name {
+  font-weight: 500;
+}
+.what-people-say-section .body-con .comments-container .comment .top .top-right .commentator-position {
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+.what-people-say-section .body-con .comments-container .comment .bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.what-people-say-section .body-con .comments-container .comment .bottom .comment {
+  opacity: 0.5;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.what-people-say-section .body-con .comments-container .comment .bottom .stars-container {
+  margin-top: 10px;
+  gap: 10px;
+}
+.what-people-say-section .body-con .comments-container .comment .bottom .stars-container svg {
+  fill: #f1b67d;
+}
+
 footer {
   background-color: var(--text-color);
   width: 100%;
@@ -405,7 +481,8 @@ footer .col {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-footer .col p, footer .col a {
+footer .col p,
+footer .col a {
   color: white;
 }
 footer .col .col-body {
