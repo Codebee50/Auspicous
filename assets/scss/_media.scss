@@ -1,0 +1,239 @@
+@media screen and (max-width:900px){
+
+    .about-us-section{
+        .happy-customer-showcase{
+            .left{
+                img{
+                    width: 90%;
+                }
+            }
+
+            .ceo-comment-container{
+                .ceo-comment-txt{
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        
+    }
+
+   .section-padding{
+        padding: 10px 50px;
+   }
+
+   .hero-background-img{
+    width: 70%;
+   }
+}
+
+@media screen and (max-width:770px){
+    
+    .section-padding{
+         padding: 10px 20px;
+    }
+ }
+
+ @media screen and (max-width:710px){
+   header{
+
+    .header-section{
+        .mobile{
+            display: block;
+        }
+
+       
+        nav{
+            top: 0;
+            position: fixed;
+            right: -900px;
+            height: 100vh;
+            width: 80%;
+            background-color: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+
+            .close-nav{
+                display: block;
+            }
+
+            ul{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-items: center;
+            }
+           
+        }
+
+        nav.visible{
+            right: 0;
+            
+        }
+    }
+   }
+
+   .hero-section{
+    .section-con{
+        h1{
+            font-size: 5rem;
+        }
+    }
+   }
+ }
+
+ @media screen and (max-width: 650px){
+  
+    footer{
+      .col-four{
+        display: none;
+      }
+    }
+  }
+
+ @media screen and (max-width:630px){
+    .about-us-section{
+        .happy-customer-showcase{
+            flex-direction: column;
+            .left{
+                width: 90%;
+                display: flex;
+                display: none;
+                img{
+                    width: 60%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+
+            
+            .ceo-comment-container{
+                width: 90%;
+                .ceo-comment-txt{
+                    font-size: 1rem;
+                }
+            }
+
+           
+        }
+
+        .about-auspicious{
+            flex-direction: column;
+            margin-top: 40px;
+
+            .left{
+                width: 90%;
+            }
+
+            .right{
+                width: 90%;
+                padding: 0;
+            }
+        }
+    }
+ }
+
+ @media screen and (max-width: 558px){
+    .hero-section{
+        .section-con{
+            .statistics-container{
+                grid-template-columns: repeat(2, 1fr);
+                .stat{
+                    .number{
+                        font-size: 1.2rem;
+                    }
+
+                    .stat-name{
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .people-stat{
+                    .people-con{
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+ }
+
+ @media screen and (max-width: 480px){
+  
+    footer{
+      .col-three{
+        display: none;
+      }
+    }
+  }
+  
+
+
+ @media screen and (max-width: 460px){
+    .hero-section{
+        .section-con{
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+       }
+ }
+
+ @media screen and (max-width: 439px){
+    footer{
+      flex-direction: column-reverse;
+      
+    }
+  }
+
+ @media screen and (max-width: 340px){
+    .hero-section{
+        .section-con{
+            .statistics-container{
+                grid-template-columns: repeat(1, 1fr);
+                align-items: center;
+                justify-items: center;
+
+
+                .stat{
+                    width: 100%;
+                    
+                    .number{
+                        font-size: 1.2rem;
+                    }
+
+                    .stat-name{
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .people-stat{
+                    .people-con{
+                        margin: 0;
+                        margin-right: 20px;
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .projects-section{
+        .section-heading{
+            .heading{
+                p{
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+ }
