@@ -217,6 +217,44 @@
     }
   }
 
+@media screen and (max-width: 400px){
+    .solar-quotations-section{
+        .quotations-container{
+            .quotations-row{
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+                .quotation-card{
+                    .price-txt{
+                        font-size: 1.6rem;
+                    }
+
+                    .quotation-title{
+                        font-size: 1rem;
+                    }
+
+                    .billing-info{
+                        font-size: 0.9rem;
+                    }
+
+                    .plan-features-container{
+                        .plan-feature{
+                            i{
+                                font-size: 1.2rem;
+                            }
+
+                            p{
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
 @media screen and (max-width: 370px){
     .contact-us-section{
         .contact-prompt{
@@ -309,4 +347,17 @@
             }
         }
     }
+
+    .solar-quotations-section{
+        .quotations-container{
+            .quotations-row{
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+              
+
+            }
+        }
+
+    }
 }
+

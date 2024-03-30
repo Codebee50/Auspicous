@@ -470,7 +470,7 @@ main {
 }
 
 .solar-quotations-section {
-  margin-top: 60px;
+  margin-top: 40px;
 
   .quotations-container {
     display: flex;
@@ -479,7 +479,6 @@ main {
 
     .quotations-row {
       width: 100%;
-
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 
@@ -488,7 +487,7 @@ main {
         flex-direction: column;
         align-items: center;
         box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-       
+
         padding: 15px;
         border-radius: 5px;
         // width: 400px;
@@ -535,13 +534,15 @@ main {
           }
         }
 
-        a{
+        a {
           width: 100%;
           text-decoration: none;
+          display: flex;
+          align-items: center;
         }
-        .btn-get-started{
+        .btn-get-started {
           width: 90%;
-          padding:18px 20px; 
+          padding: 18px 20px;
           margin: 30px;
           outline: none;
           border: none;

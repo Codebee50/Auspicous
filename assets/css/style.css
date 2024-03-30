@@ -468,7 +468,7 @@ main {
 }
 
 .solar-quotations-section {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 .solar-quotations-section .quotations-container {
   display: flex;
@@ -528,6 +528,8 @@ main {
 .solar-quotations-section .quotations-container .quotations-row .quotation-card a {
   width: 100%;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 .solar-quotations-section .quotations-container .quotations-row .quotation-card .btn-get-started {
   width: 90%;
@@ -877,6 +879,26 @@ footer .col-one .txt-copyright {
     flex-direction: column-reverse;
   }
 }
+@media screen and (max-width: 400px) {
+  .solar-quotations-section .quotations-container .quotations-row {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .solar-quotations-section .quotations-container .quotations-row .quotation-card .price-txt {
+    font-size: 1.6rem;
+  }
+  .solar-quotations-section .quotations-container .quotations-row .quotation-card .quotation-title {
+    font-size: 1rem;
+  }
+  .solar-quotations-section .quotations-container .quotations-row .quotation-card .billing-info {
+    font-size: 0.9rem;
+  }
+  .solar-quotations-section .quotations-container .quotations-row .quotation-card .plan-features-container .plan-feature i {
+    font-size: 1.2rem;
+  }
+  .solar-quotations-section .quotations-container .quotations-row .quotation-card .plan-features-container .plan-feature p {
+    font-size: 0.9rem;
+  }
+}
 @media screen and (max-width: 370px) {
   .contact-us-section .contact-prompt h1 {
     font-size: 2.7rem;
@@ -924,5 +946,8 @@ footer .col-one .txt-copyright {
   }
   .contact-us-section .contact-options .contact .content .contact-item {
     font-size: 0.8rem;
+  }
+  .solar-quotations-section .quotations-container .quotations-row {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }/*# sourceMappingURL=style.css.map */
