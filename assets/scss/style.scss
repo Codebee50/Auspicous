@@ -394,6 +394,7 @@ main {
     display: flex;
     flex-direction: row;
     overflow: scroll;
+    justify-content: space-between;
 
     .first {
       min-width: 170px;
@@ -413,11 +414,11 @@ main {
     .comments-container {
       display: flex;
       flex-direction: row;
-    //   margin-left: 100px;
-      gap: 30px;
+      //   margin-left: 100px;
+      gap: 40px;
 
       .comment {
-        width: 280px;
+        width: 300px;
         .top {
           img {
             width: 50px;
@@ -468,21 +469,104 @@ main {
   }
 }
 
-.contact-us-section{
+.solar-quotations-section {
   margin-top: 60px;
-  
 
-  .section-content{
+  .quotations-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+
+    .quotations-row {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+
+      .quotation-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+       
+        padding: 15px;
+        border-radius: 5px;
+        // width: 400px;
+
+        .price-txt {
+          font-size: 2rem;
+          margin-top: 30px;
+          font-family: "Poppins", sans-serif;
+          color: var(--text-color);
+        }
+
+        .quotation-title {
+          margin-top: 10px;
+          font-weight: 600;
+          color: var(--text-color);
+          font-size: 1.2rem;
+        }
+
+        .billing-info {
+          opacity: 0.5;
+          margin-top: 4px;
+        }
+
+        .plan-features-container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-top: 30px;
+          .plan-feature {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 5px 20px;
+
+            i {
+              color: var(--text-color);
+              font-size: 1.5rem;
+            }
+            p {
+              margin-left: 10px;
+              font-size: 1.07rem;
+              opacity: 0.6;
+            }
+          }
+        }
+
+        a{
+          width: 100%;
+          text-decoration: none;
+        }
+        .btn-get-started{
+          width: 90%;
+          padding:18px 20px; 
+          margin: 30px;
+          outline: none;
+          border: none;
+          background-color: var(--text-color);
+          color: white;
+          border-radius: 9px;
+        }
+      }
+    }
+  }
+}
+
+.contact-us-section {
+  margin-top: 60px;
+
+  .section-content {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 
-    .image-container{
+    .image-container {
       width: 100%;
       z-index: -1;
-      img{
+      img {
         width: 100%;
         height: 80vh;
         object-fit: cover;
@@ -491,7 +575,7 @@ main {
       }
     }
 
-    .contact-content{
+    .contact-content {
       position: sticky;
       width: 70%;
       min-height: 60vh;
@@ -501,45 +585,45 @@ main {
       top: 50vh;
       margin-top: -30vh;
 
-      .top-comment-content{
+      .top-comment-content {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-top: 30px;
 
-        h1{
+        h1 {
           color: var(--text-color);
         }
 
-        p{
+        p {
           font-size: 0.9rem;
           opacity: 0.5;
           margin-top: 5px;
         }
       }
 
-      .contact-body-content{
+      .contact-body-content {
         padding: 40px;
         display: flex;
         flex-direction: column;
-        
+
         gap: 30px;
 
-        .contact{
+        .contact {
           display: flex;
           flex-direction: row;
           align-items: center;
 
-          .right{
+          .right {
             margin-left: 10px;
 
-            .whine{
+            .whine {
               font-size: 0.8rem;
               opacity: 0.5;
             }
 
-            .contact-item{
+            .contact-item {
               font-size: 1.1rem;
               margin-top: 6px;
               font-weight: 500;
@@ -547,20 +631,19 @@ main {
           }
         }
       }
-
     }
   }
 
-  .contact-prompt{
+  .contact-prompt {
     width: 50%;
     padding: 20px;
-    h1{
+    h1 {
       font-size: 4rem;
       font-weight: 800;
       color: var(--text-color);
     }
 
-    p{
+    p {
       opacity: 0.5;
       margin-top: 10px;
       max-width: 400px;
@@ -568,38 +651,37 @@ main {
     }
   }
 
-  .contact-options{
+  .contact-options {
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 20px;
 
-    
-    .contact{
+    .contact {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
 
-      .symbol{
+      .symbol {
         border: 0.5px solid var(--text-color);
         padding: 6px;
         border-radius: 6px;
       }
 
-      .content{
+      .content {
         margin-left: 20px;
-        h4{
+        h4 {
           font-size: 1.2rem;
           font-weight: 600;
         }
-        .whine{
+        .whine {
           font-size: 0.8rem;
           opacity: 0.5;
           display: none;
         }
 
-        .contact-item{
+        .contact-item {
           font-size: 1.1rem;
           margin-top: 6px;
           font-weight: 500;
@@ -607,7 +689,6 @@ main {
       }
     }
   }
-
 }
 
 footer {

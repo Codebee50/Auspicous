@@ -405,6 +405,7 @@ main {
   display: flex;
   flex-direction: row;
   overflow: scroll;
+  justify-content: space-between;
 }
 .what-people-say-section .body-con .first {
   min-width: 170px;
@@ -422,10 +423,10 @@ main {
 .what-people-say-section .body-con .comments-container {
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 40px;
 }
 .what-people-say-section .body-con .comments-container .comment {
-  width: 280px;
+  width: 300px;
 }
 .what-people-say-section .body-con .comments-container .comment .top img {
   width: 50px;
@@ -464,6 +465,79 @@ main {
 }
 .what-people-say-section .body-con .comments-container .comment .bottom .stars-container svg {
   fill: #f1b67d;
+}
+
+.solar-quotations-section {
+  margin-top: 60px;
+}
+.solar-quotations-section .quotations-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+.solar-quotations-section .quotations-container .quotations-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  border-radius: 5px;
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card .price-txt {
+  font-size: 2rem;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card .quotation-title {
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card .billing-info {
+  opacity: 0.5;
+  margin-top: 4px;
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card .plan-features-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card .plan-features-container .plan-feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 20px;
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card .plan-features-container .plan-feature i {
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card .plan-features-container .plan-feature p {
+  margin-left: 10px;
+  font-size: 1.07rem;
+  opacity: 0.6;
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card a {
+  width: 100%;
+  text-decoration: none;
+}
+.solar-quotations-section .quotations-container .quotations-row .quotation-card .btn-get-started {
+  width: 90%;
+  padding: 18px 20px;
+  margin: 30px;
+  outline: none;
+  border: none;
+  background-color: var(--text-color);
+  color: white;
+  border-radius: 9px;
 }
 
 .contact-us-section {
