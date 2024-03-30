@@ -1,3 +1,14 @@
+@media screen and (max-width: 970px){
+    .contact-us-section{
+        .contact-prompt{
+            h1{
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+
 @media screen and (max-width:900px){
 
     .about-us-section{
@@ -86,6 +97,20 @@
 
  @media screen and (max-width: 650px){
   
+    .contact-us-section{
+        flex-direction: column;
+        .contact-prompt{
+            width: 100%;
+            padding: 10px;
+           
+        }
+
+        .contact-options{
+            padding: 10px;
+            width: 100%;
+        }
+    }
+
     footer{
       .col-four{
         display: none;
@@ -192,6 +217,30 @@
     }
   }
 
+@media screen and (max-width: 370px){
+    .contact-us-section{
+        .contact-prompt{
+            h1{
+                font-size: 2.7rem;
+            }
+        }
+
+        .contact-options{
+            .contact{
+                .content{
+                    h4{
+                        font-size: 1rem;
+                    }
+
+                    .contact-item{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
  @media screen and (max-width: 340px){
     .hero-section{
         .section-con{
@@ -237,3 +286,27 @@
         }
     }
  }
+
+ @media screen and (max-width: 317px){
+    .contact-us-section{
+        .contact-prompt{
+            h1{
+                font-size: 2.4rem;
+            }
+        }
+
+        .contact-options{
+            .contact{
+                .content{
+                    h4{
+                        font-size: 0.9rem;
+                    }
+
+                    .contact-item{
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

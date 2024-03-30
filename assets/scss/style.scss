@@ -417,7 +417,7 @@ main {
       gap: 30px;
 
       .comment {
-        width: 300px;
+        width: 280px;
         .top {
           img {
             width: 50px;
@@ -466,6 +466,148 @@ main {
       }
     }
   }
+}
+
+.contact-us-section{
+  margin-top: 60px;
+  
+
+  .section-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    .image-container{
+      width: 100%;
+      z-index: -1;
+      img{
+        width: 100%;
+        height: 80vh;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+      }
+    }
+
+    .contact-content{
+      position: sticky;
+      width: 70%;
+      min-height: 60vh;
+      border-radius: 10px;
+      background-color: white;
+      z-index: 9;
+      top: 50vh;
+      margin-top: -30vh;
+
+      .top-comment-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+
+        h1{
+          color: var(--text-color);
+        }
+
+        p{
+          font-size: 0.9rem;
+          opacity: 0.5;
+          margin-top: 5px;
+        }
+      }
+
+      .contact-body-content{
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        
+        gap: 30px;
+
+        .contact{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .right{
+            margin-left: 10px;
+
+            .whine{
+              font-size: 0.8rem;
+              opacity: 0.5;
+            }
+
+            .contact-item{
+              font-size: 1.1rem;
+              margin-top: 6px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .contact-prompt{
+    width: 50%;
+    padding: 20px;
+    h1{
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--text-color);
+    }
+
+    p{
+      opacity: 0.5;
+      margin-top: 10px;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+  }
+
+  .contact-options{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+
+    
+    .contact{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+      .symbol{
+        border: 0.5px solid var(--text-color);
+        padding: 6px;
+        border-radius: 6px;
+      }
+
+      .content{
+        margin-left: 20px;
+        h4{
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+        .whine{
+          font-size: 0.8rem;
+          opacity: 0.5;
+          display: none;
+        }
+
+        .contact-item{
+          font-size: 1.1rem;
+          margin-top: 6px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
 }
 
 footer {
