@@ -38,8 +38,7 @@ function sendEmail({
     method: "POST",
     headers: {
       accept: "application/json",
-      "api-key":
-        "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",
+      "api-key": "",
       "content-type": "application/json",
       "X-Sib-Sandbox": "drop",
     },
