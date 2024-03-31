@@ -465,8 +465,8 @@ main {
   margin: 0 10px;
 }
 .projects-section .projects-container .project img {
-  width: 350px;
-  height: 300px;
+  width: 400px;
+  height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -478,12 +478,14 @@ main {
   font-weight: 500;
   font-size: 1.1rem;
   margin-top: 10px;
+  display: none;
 }
 .projects-section .projects-container .project .project-description {
   font-size: 0.9rem;
   opacity: 0.6;
   color: var(--text-color);
   margin-top: 5px;
+  display: none;
 }
 
 .about-us-section {
