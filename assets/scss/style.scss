@@ -222,6 +222,10 @@ main {
       font-weight: 900;
       text-align: center;
       z-index: 2;
+
+      span{
+        color: var(--main-green);
+      }
     }
 
     .hero-exp {
