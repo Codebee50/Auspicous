@@ -573,9 +573,9 @@
                 </div>
               </div>
 
-              <a href=""><button class="btn-get-started">
+              <button class="btn-get-started" data-planname="1kVa solar system">
                 Get started
-              </button></a>
+              </button>
             </div>
 
             <div class="quotation-card">
@@ -630,9 +630,9 @@
                 </div>
               </div>
 
-              <a href=""><button class="btn-get-started">
+              <button class="btn-get-started" data-planname="3kVa solar system">
                 Get started
-              </button></a>
+              </button>
             </div>
 
             <div class="quotation-card">
@@ -688,9 +688,9 @@
                 </div>
               </div>
 
-              <a href=""><button class="btn-get-started">
+              <button class="btn-get-started" data-planname="5kVa solar system">
                 Get started
-              </button></a>
+              </button>
             </div>
 
 
@@ -754,9 +754,9 @@
                 </div>
               </div>
 
-              <a href=""><button class="btn-get-started">
+              <button class="btn-get-started" data-planname="10kVa solar system">
                 Get started
-              </button></a>
+              </button>
             </div>
 
 
@@ -821,9 +821,9 @@
                 </div>
               </div>
 
-              <a href=""><button class="btn-get-started">
+              <button class="btn-get-started" data-planname="15kVa solar system">
                 Get started
-              </button></a>
+              </button>
             </div>
 
 
@@ -888,9 +888,9 @@
                 </div>
               </div>
 
-              <a href=""><button class="btn-get-started">
+              <button class="btn-get-started" data-planname="20kVa solar system">
                 Get started
-              </button></a>
+              </button>
             </div>
           </div>
         </div>
@@ -1003,6 +1003,32 @@
       </section>
     </main>
 
+    <div class="modal-section" id="contact-modal" >
+      <div class="modal-content contact-us-modal-content">
+        <div class="close-modal border-close-modal" onclick="transitionModal('none')">
+          <svg class="svg-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
+        </div>
+
+        <h1>Get in touch!</h1>
+        <p class="prompt-msg interest-message"></p>
+
+        <p class="prompt-msg">To get started your request, please fill out the form below and we will contact you shortly</p>
+        <form action="" id="contact-form">
+          <input type="text" name="name" id="" placeholder="Your name" class="txt-input" required>
+
+          <input type="text" name="contact" id="" placeholder="Your Email or Phone number" class="txt-input" required>
+          <p class="message"><span style="color: red;">* </span>We will get to back you using the information you provide</p>
+          <button class="cus-button submit-contact-modal-form">Submit</button>
+          <div class="loading-container">
+            <img src="assets/img/spinner.gif" alt="loading">
+            <p class="message">Loading..</p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
     <footer class="section-padding">
       <div class="col-one col">
         
@@ -1056,7 +1082,7 @@
 
     </footer>
    
-
+    <script src="assets/js/components.js"></script>
     <script src="/assets/js/script.js"></script>
   </body>
 </html>

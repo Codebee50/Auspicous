@@ -4,6 +4,11 @@
   --background: #EBEDE7;
   --text-color: #142032;
   --bright-yellow: #F2C743;
+  --soft-red: #EC6249;
+  --soft-grey: #8A9099;
+  --generic-grey: #f4f4f3;
+  --light-red-01: #F2E4DF;
+  --main-green: #355E2D;
 }
 
 * {
@@ -11,6 +16,131 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+}
+
+.toast {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  transform: translateY(-150%); /* Initially off-screen */
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.07);
+  transition: transform 0.5s ease-in-out; /* Animation duration and easing */
+  z-index: 999;
+}
+.toast .toast-con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.9rem;
+  padding-right: 0.9rem;
+  padding-left: 0.9rem;
+}
+.toast .toast-con .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.toast .toast-con .left i {
+  color: var(--soft-red);
+  font-size: 1.5rem;
+  margin-top: 2px;
+}
+.toast .toast-con .left p {
+  font-size: 0.9rem;
+  margin-left: 5px;
+  color: var(--soft-red);
+}
+.toast .toast-con .right i {
+  font-size: 1.2rem;
+  color: var(--soft-grey);
+  cursor: pointer;
+}
+.toast .progress-container {
+  width: 100%;
+  padding: 0;
+}
+.toast .progress-container progress {
+  border-radius: 7px;
+  width: 100%;
+  height: 5px;
+}
+.toast .progress-container progress::-webkit-progress-bar {
+  background-color: var(--generic-grey);
+}
+.toast .progress-container progress::-webkit-progress-value {
+  border-radius: 7px;
+  background-color: var(--soft-red);
+}
+
+.toast.success .toast-con .left i {
+  color: var(--main-green);
+}
+.toast.success .toast-con .left p {
+  color: var(--main-green);
+}
+.toast.success .toast-con .right i {
+  color: var(--main-green);
+}
+.toast.success .progress-container {
+  width: 100%;
+  padding: 0;
+}
+.toast.success .progress-container progress {
+  border-radius: 7px;
+  width: 100%;
+  height: 5px;
+}
+.toast.success .progress-container progress::-webkit-progress-bar {
+  background-color: #ebedf0;
+}
+.toast.success .progress-container progress::-webkit-progress-value {
+  border-radius: 7px;
+  background-color: var(--main-green);
+}
+
+.modal-section {
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+.modal-section .modal-content {
+  background-color: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+.modal-section .modal-content p {
+  opacity: 0.7;
+}
+.modal-section .modal-content .close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.modal-section.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 svg {
@@ -92,6 +222,23 @@ svg {
   text-align: center;
 }
 
+.btn-get-started, .cus-button {
+  width: 90%;
+  padding: 18px 20px;
+  margin: 30px;
+  outline: none;
+  border: none;
+  background-color: var(--text-color);
+  color: white;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.cus-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 .hero-background-img.left {
   left: 0;
 }
@@ -156,6 +303,71 @@ header .header-section nav ul .contact-us-btn {
 
 main {
   width: 100%;
+}
+
+.contact-us-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-us-modal-content h1 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-top: 30px;
+}
+.contact-us-modal-content .prompt-msg {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  margin-top: 5px;
+  line-height: 1.5;
+  width: 90%;
+  text-align: center;
+}
+.contact-us-modal-content .loading-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: none;
+}
+.contact-us-modal-content .loading-container img {
+  width: 20px;
+  height: 20px;
+}
+.contact-us-modal-content .loading-container p {
+  margin-left: 10px;
+}
+.contact-us-modal-content .loading-container.visible {
+  display: flex;
+}
+.contact-us-modal-content .message {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+.contact-us-modal-content form {
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.contact-us-modal-content form .txt-input {
+  width: 100%;
+  border: none;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--text-color);
+  outline: none;
+}
+
+.border-close-modal {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  opacity: 0.6;
+  border: 0.5px solid var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-section {
@@ -530,16 +742,6 @@ main {
   text-decoration: none;
   display: flex;
   align-items: center;
-}
-.solar-quotations-section .quotations-container .quotations-row .quotation-card .btn-get-started {
-  width: 90%;
-  padding: 18px 20px;
-  margin: 30px;
-  outline: none;
-  border: none;
-  background-color: var(--text-color);
-  color: white;
-  border-radius: 9px;
 }
 
 .contact-us-section {
