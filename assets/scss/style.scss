@@ -1,5 +1,10 @@
 @import "base/base";
 
+html{
+  scroll-behavior: smooth;
+}
+
+
 .hero-background-img {
   width: 40%;
   position: absolute;

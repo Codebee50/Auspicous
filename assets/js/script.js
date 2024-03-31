@@ -21,6 +21,7 @@ function generateRandomString() {
   return Math.random().toString(36).slice(2);
 }
 
+
 function sendEmail({
   toEmail,
   toName,
@@ -34,11 +35,14 @@ function sendEmail({
 }) {
   if (!toEmail || !toName || !htmlContent) return;
 
-  fetch("https://api.sendinblue.com/v3/smtp/email", {
+  fetch('/assets/js/store.json')
+  .then(response => response.json())
+  .then(data=> {
+    fetch("https://api.sendinblue.com/v3/smtp/email", {
     method: "POST",
     headers: {
       accept: "application/json",
-      "api-key": "",
+      "api-key": `${data.value}`,
       "content-type": "application/json",
       "X-Sib-Sandbox": "drop",
     },
@@ -74,6 +78,8 @@ function sendEmail({
     .then((data) => console.log(data))
     .catch((error) => console.error("Error:", error))
     .finally(onFinished)
+  })
+  
 }
 
 contactForm.addEventListener("submit", function (e) {

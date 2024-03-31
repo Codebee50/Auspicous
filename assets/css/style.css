@@ -190,6 +190,10 @@ svg {
   font-size: 1.5rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .hero-background-img {
   width: 40%;
   position: absolute;
