@@ -6,6 +6,29 @@ let selectedInterest= ''
 // transitionModal('contact-modal')
 
 
+
+
+// Convert string to ArrayBuffer
+function stringToArrayBuffer(str) {
+  var encoder = new TextEncoder();
+  return encoder.encode(str);
+}
+
+// Hash a string using SHA-256 algorithm
+async function hashString(str) {
+  const buffer = stringToArrayBuffer(str);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+  // Convert hash buffer to hexadecimal string
+  return Array.prototype.map.call(new Uint8Array(hashBuffer), x => ('00' + x.toString(16)).slice(-2)).join('');
+}
+
+// Example usage
+const inputString = 'Hello, world!';
+hashString(inputString).then(hash => {
+  console.log('Hash:', hash);
+});
+
+
 function enterContactModalLoadingState(){
   document.querySelector('.loading-container').classList.add('visible')
   document.querySelector('.submit-contact-modal-form').disabled = true
