@@ -102,6 +102,14 @@ function sendEmail({
     .catch((error) => console.error("Error:", error))
     .finally(onFinished)
   })
+  .catch(error=>{
+    resetContactModalLoadingState()
+    showToast({
+      message: 'An error occured while sending email, please try again later.',
+      style: 'error',
+      duration: 5000
+    })
+  })
   
 }
 
