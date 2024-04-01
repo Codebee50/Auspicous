@@ -151,7 +151,7 @@ contactForm.addEventListener("submit", function (e) {
    onError: ()=> {
     showToast({
       message: 'An error occured while sending email, please try again later.',
-      style: 'success',
+      style: 'error',
       duration: 5000
     })
    }
