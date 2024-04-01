@@ -62,7 +62,7 @@
         <div class="section-con">
           <h1>
             Harness the power <br />
-            of the sun
+            of the <span id="typedel">sun</span>
           </h1>
 
           <p class="hero-exp">
@@ -1085,7 +1085,23 @@
      
 
     </footer>
-   
+    
+     <!-- Load library from the CDN -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('#typedel', {
+      strings: ['sun', 'network'],
+      typeSpeed: 200,
+      loop: true,
+      loopCount: Infinity,
+      cursorChar: '.',
+      backDelay: 5000
+    });
+  </script>
+
+
     <script src="assets/js/components.js"></script>
     <script src="/assets/js/script.js"></script>
   </body>
