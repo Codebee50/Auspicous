@@ -61,14 +61,13 @@ function sendEmail({
   fetch('/assets/js/store.json')
   .then(response => response.json())
   .then(data=> {
-    console.log(data.value)
     fetch("https://api.sendinblue.com/v3/smtp/email", {
     method: "POST",
     headers: {
       accept: "application/json",
       "api-key": `${data.value}`,
       "content-type": "application/json",
-      // "X-Sib-Sandbox": "drop",
+      "X-Sib-Sandbox": "drop",
     },
     body: JSON.stringify({
       sender: {
