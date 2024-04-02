@@ -1,49 +1,26 @@
 const navBar = document.getElementById("nav-bar");
 const mobile = document.querySelector(".mobile");
 const contactForm = document.getElementById("contact-form");
-let selectedInterest= ''
+let selectedInterest = "";
 
 // transitionModal('contact-modal')
+import TOKEN from "./config.js";
 
 
 
-
-// Convert string to ArrayBuffer
-function stringToArrayBuffer(str) {
-  var encoder = new TextEncoder();
-  return encoder.encode(str);
+function enterContactModalLoadingState() {
+  document.querySelector(".loading-container").classList.add("visible");
+  document.querySelector(".submit-contact-modal-form").disabled = true;
 }
 
-// Hash a string using SHA-256 algorithm
-async function hashString(str) {
-  const buffer = stringToArrayBuffer(str);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
-  // Convert hash buffer to hexadecimal string
-  return Array.prototype.map.call(new Uint8Array(hashBuffer), x => ('00' + x.toString(16)).slice(-2)).join('');
+function resetContactModalLoadingState() {
+  document.querySelector(".loading-container").classList.remove("visible");
+  document.querySelector(".submit-contact-modal-form").disabled = false;
 }
-
-// Example usage
-const inputString = 'Hello, world!';
-hashString(inputString).then(hash => {
-  console.log('Hash:', hash);
-});
-
-
-function enterContactModalLoadingState(){
-  document.querySelector('.loading-container').classList.add('visible')
-  document.querySelector('.submit-contact-modal-form').disabled = true
-}
-
-function resetContactModalLoadingState(){
-  document.querySelector('.loading-container').classList.remove('visible')
-  document.querySelector('.submit-contact-modal-form').disabled = false
-}
-
 
 function generateRandomString() {
   return Math.random().toString(36).slice(2);
 }
-
 
 function sendEmail({
   toEmail,
@@ -52,20 +29,17 @@ function sendEmail({
   senderEmail = "onuhudoudo@gmail.com",
   subject = "Test",
   htmlContent,
-  onSuccess = ()=>{}, 
-  onError = ()=>{},
-  onFinished = ()=>{}
+  onSuccess = () => {},
+  onError = () => {},
+  onFinished = () => {},
 }) {
   if (!toEmail || !toName || !htmlContent) return;
 
-  fetch('/assets/js/store.json')
-  .then(response => response.json())
-  .then(data=> {
-    fetch("https://api.sendinblue.com/v3/smtp/email", {
+  fetch("https://api.sendinblue.com/v3/smtp/email", {
     method: "POST",
     headers: {
       accept: "application/json",
-      "api-key": `${data.value}`,
+      "api-key": `${TOKEN}`,
       "content-type": "application/json",
       "X-Sib-Sandbox": "drop",
     },
@@ -89,40 +63,28 @@ function sendEmail({
       },
     }),
   })
-    .then((response) =>{
-      if(response.ok){
-        onSuccess()
+    .then((response) => {
+      if (response.ok) {
+        onSuccess();
+      } else {
+        onError();
       }
-      else{
-        onError()
-      }
-      return response.json()
+      return response.json();
     })
     .then((data) => console.log(data))
     .catch((error) => console.error("Error:", error))
-    .finally(onFinished)
-  })
-  .catch(error=>{
-    resetContactModalLoadingState()
-    showToast({
-      message: 'An error occured while sending email, please try again later.',
-      style: 'error',
-      duration: 5000
-    })
-  })
-  
+    .finally(onFinished);
 }
 
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  if(selectedInterest === '') return
+  if (selectedInterest === "") return;
 
-  enterContactModalLoadingState()
+  enterContactModalLoadingState();
 
-  const formData = new FormData(e.target)
-  const name = formData.get('name')
-  const contact = formData.get('contact')
-
+  const formData = new FormData(e.target);
+  const name = formData.get("name");
+  const contact = formData.get("contact");
 
   const htmlContent = `
   <html>
@@ -138,43 +100,42 @@ contactForm.addEventListener("submit", function (e) {
       <br>
   </body>
   </html>
-  `
-  
+  `;
+
   sendEmail({
-   toEmail: "onuhudoudo@gmail.com",
-   toName: "Sulaiman Popoola Olasunkianmi",
-   subject: `Solar Installation request from Auspicious website ~id:${generateRandomString()}`,
-   htmlContent: htmlContent,
-   onFinished: ()=>{
-    resetContactModalLoadingState()
-    transitionModal('None')
-   },
-   onSuccess: ()=> {
-    showToast({
-      message: 'Thank you for your inquiry. We have received your request and will be in touch within 1-3 days to discuss it further.',
-      style: 'success',
-      duration: 10000
-    })
-   },
-   onError: ()=> {
-    showToast({
-      message: 'An error occured while sending email, please try again later.',
-      style: 'error',
-      duration: 5000
-    })
-   }
-  })
+    toEmail: "onuhudoudo@gmail.com",
+    toName: "Sulaiman Popoola Olasunkianmi",
+    subject: `Solar Installation request from Auspicious website ~id:${generateRandomString()}`,
+    htmlContent: htmlContent,
+    onFinished: () => {
+      resetContactModalLoadingState();
+      transitionModal("None");
+    },
+    onSuccess: () => {
+      showToast({
+        message:
+          "Thank you for your inquiry. We have received your request and will be in touch within 1-3 days to discuss it further.",
+        style: "success",
+        duration: 10000,
+      });
+    },
+    onError: () => {
+      showToast({
+        message:
+          "An error occured while sending email, please try again later.",
+        style: "error",
+        duration: 5000,
+      });
+    },
+  });
 });
-
-
 
 document.querySelectorAll(".btn-get-started").forEach(function (btn) {
   btn.addEventListener("click", function (clicked) {
-   
     const targetBtn = clicked.target;
     const planName = targetBtn.getAttribute("data-planname");
     showContactModal(planName);
-    selectedInterest = planName
+    selectedInterest = planName;
   });
 });
 
