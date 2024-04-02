@@ -6,7 +6,6 @@ let selectedInterest = "";
 // transitionModal('contact-modal')
 import TOKEN from "./config.js";
 
-console.log(TOKEN)
 function enterContactModalLoadingState() {
   document.querySelector(".loading-container").classList.add("visible");
   document.querySelector(".submit-contact-modal-form").disabled = true;
