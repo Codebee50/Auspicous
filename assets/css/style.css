@@ -226,7 +226,8 @@ html {
   text-align: center;
 }
 
-.btn-get-started, .cus-button {
+.btn-get-started,
+.cus-button {
   width: 90%;
   padding: 18px 20px;
   margin: 30px;
@@ -327,11 +328,48 @@ main {
   width: 90%;
   text-align: center;
 }
+.contact-us-modal-content .other-options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.contact-us-modal-content .other-options .whatsapp-button {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #48A385;
+  justify-content: space-evenly;
+  color: var(--text-color);
+}
+.contact-us-modal-content .other-options .whatsapp-button svg {
+  fill: #48A385;
+}
+.contact-us-modal-content .other-options .or-con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.contact-us-modal-content .other-options .or-con .line {
+  width: 20px;
+  height: 1px;
+  background-color: rgb(204, 204, 204);
+  opacity: 0.7;
+}
+.contact-us-modal-content .other-options .or-con p {
+  font-size: 0.9rem;
+}
 .contact-us-modal-content .loading-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
 }
 .contact-us-modal-content .loading-container img {
   width: 20px;

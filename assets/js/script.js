@@ -1,7 +1,9 @@
 const navBar = document.getElementById("nav-bar");
 const mobile = document.querySelector(".mobile");
 const contactForm = document.getElementById("contact-form");
+const whatsappButton = document.querySelector('.whatsapp-button')
 let selectedInterest = "";
+
 
 // transitionModal('contact-modal')
 import TOKEN from "./config.js";
@@ -24,7 +26,7 @@ function sendEmail({
   toEmail,
   toName,
   senderName = "Auspicious website",
-  senderEmail = "onuhudoudo@gmail.com",
+  senderEmail = "Auspiciousnetwork@gmail.com",
   subject = "Test",
   htmlContent,
   onSuccess = () => {},
@@ -101,7 +103,7 @@ contactForm.addEventListener("submit", function (e) {
   `;
 
   sendEmail({
-    toEmail: "onuhudoudo@gmail.com",
+    toEmail: "Auspiciousnetwork@gmail.com",
     toName: "Sulaiman Popoola Olasunkianmi",
     subject: `Solar Installation request from Auspicious website ~id:${generateRandomString()}`,
     htmlContent: htmlContent,
@@ -127,6 +129,13 @@ contactForm.addEventListener("submit", function (e) {
     },
   });
 });
+
+whatsappButton.addEventListener('click', function(){
+  if(selectedInterest !== ''){
+    window.open(`https://wa.me/+2348033193107?text=Hello, I am interested in exploring further details regarding the ${selectedInterest}`, '_blank')
+    // window.location.href = 'https://wa.me/1234567890?text=Hello%20there!'
+  }
+})
 
 document.querySelectorAll(".btn-get-started").forEach(function (btn) {
   btn.addEventListener("click", function (clicked) {

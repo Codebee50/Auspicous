@@ -1,9 +1,8 @@
 @import "base/base";
 
-html{
+html {
   scroll-behavior: smooth;
 }
-
 
 .hero-background-img {
   width: 40%;
@@ -40,7 +39,8 @@ html{
   }
 }
 
-.btn-get-started, .cus-button {
+.btn-get-started,
+.cus-button {
   width: 90%;
   padding: 18px 20px;
   margin: 30px;
@@ -52,7 +52,7 @@ html{
   cursor: pointer;
 }
 
-.cus-button:disabled{
+.cus-button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
@@ -151,26 +151,70 @@ main {
     text-align: center;
   }
 
-  .loading-container{
+  .other-options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+
+    .whatsapp-button{
+      background-color: transparent;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: 1px solid #48A385;
+      justify-content: space-evenly;
+
+      color: var(--text-color);
+
+      svg{
+        fill: #48A385;
+      }
+    }
+
+    .or-con {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      .line {
+        width: 20px;
+        height: 1px;
+        background-color: rgb(204, 204, 204);
+        opacity: 0.7;
+      }
+
+      p{
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .loading-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     display: none;
-    img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    img {
       width: 20px;
       height: 20px;
     }
 
-    p{
+    p {
       margin-left: 10px;
     }
   }
 
-  .loading-container.visible{
+  .loading-container.visible {
     display: flex;
   }
 
-  .message{
+  .message {
     font-size: 0.8rem;
     opacity: 0.5;
   }
@@ -223,7 +267,7 @@ main {
       text-align: center;
       z-index: 2;
 
-      span{
+      span {
         color: var(--main-green);
       }
     }
@@ -639,7 +683,6 @@ main {
           display: flex;
           align-items: center;
         }
-      
       }
     }
   }
